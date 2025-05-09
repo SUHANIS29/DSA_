@@ -1,0 +1,30 @@
+
+class Solution {
+public:
+    bool isPalindrome(int x) {
+      
+        if (x < 0) {
+            return false;
+        }
+
+        long long temp = x;
+        long long rev = 0;
+
+        int num_to_reverse = x;
+
+        while (num_to_reverse > 0) {
+            int remainder = num_to_reverse % 10; 
+            rev = rev * 10 + remainder;         
+            num_to_reverse = num_to_reverse / 10; 
+        }
+
+        
+        if (rev == temp) {
+            return true;
+        } else {
+            return false;
+        }
+ 
+    }
+};
+
